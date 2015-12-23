@@ -10,7 +10,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "PROJECT_URL", '"https://github.com/renaudcerrato/toggledrawable"'
+        buildConfigField "String", "PROJECT_URL", '"https://github.com/renaudcerrato/ToggleDrawable"'
     }
     buildTypes {
         release {
