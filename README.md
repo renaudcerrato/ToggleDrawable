@@ -1,6 +1,6 @@
 # ToggleDrawable #
 
-ToggleDrawable helps to create animated transitions using bezier curves.
+ToggleDrawable helps to create animated drawable transitions using bezier curves.
 
 ![animated gif](https://github.com/renaudcerrato/ToggleDrawable/raw/master/artworks/toggle.gif)
 
