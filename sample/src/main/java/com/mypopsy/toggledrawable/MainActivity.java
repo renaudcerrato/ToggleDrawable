@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     private static class MyCustomToggleDrawable extends ToggleDrawable {
 
         public MyCustomToggleDrawable(Context context) {
-            super(context, 0, R.style.ToggleDrawable);
+            super(context, 0, R.style.CustomToggleDrawableStyle);
             float radius = Math.round(getIntrinsicWidth()*0.5f);
 
             add(Bezier.quadrant(radius, 0), Bezier.line(radius, radius, radius, -radius));

@@ -13,4 +13,9 @@
         <!-- Customize your SearchArrowDrawable here-->
     </style>
 
+    <style name="CustomToggleDrawableStyle" parent="SearchArrowDrawable">
+        <!-- Customize your SearchArrowDrawable here-->
+        <item name="td_color">?attr/colorPrimary</item>
+    </style>
+
 </resources>
