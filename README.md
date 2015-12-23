@@ -1,12 +1,22 @@
 # ToggleDrawable #
 
-ToggleDrawable helps to create animated drawable transitions using bezier curves.
+ToggleDrawable helps to create animated drawable transitions. The implementation relies on bezier curves instead of SVG graphics, compatible below API 19.
 
 ![animated gif](https://github.com/renaudcerrato/ToggleDrawable/raw/master/artworks/toggle.gif)
 
 
 
 # How? #
+
+The library provides a few implementations like [`SearchArrowDrawable`]( https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/SearchArrowDrawable.java) or [`DrawerArrowDrawable`](https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/DrawerArrowDrawable.java):
+
+```
+ToggleDrawable drawable = new SearchArrowDrawable(context);
+mImageView.setImageDrawable(drawable);
+drawable.setProgress(...); // animate progress [0f..1f]
+```
+
+You can easily create your own transitions by specifying each start/end beziers curves to `ToggleDrawable`:
 
 ```
 public class MyCustomToggleDrawable extends ToggleDrawable {
