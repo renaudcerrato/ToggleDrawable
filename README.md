@@ -2,8 +2,9 @@
 
 ToggleDrawable helps to create animated drawable transitions. The implementation relies on bezier curves instead of SVG graphics, compatible below API 19.
 
-![animated gif](https://github.com/renaudcerrato/ToggleDrawable/raw/master/artworks/toggle.gif)
-
+<p align="center">
+<img src="https://github.com/renaudcerrato/ToggleDrawable/raw/master/artworks/toggle.gif">
+</p>
 
 
 # How? #
