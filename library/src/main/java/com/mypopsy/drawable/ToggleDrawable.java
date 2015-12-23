@@ -38,6 +38,10 @@ public class ToggleDrawable extends Drawable {
     private final ArrayList<Bezier> mEnd = new ArrayList<>();
     private final ArrayList<Bezier> mCurrent = new ArrayList<>();
 
+    public ToggleDrawable(Context context) {
+        this(context, 0, R.style.ToggleDrawable);
+    }
+
     public ToggleDrawable(Context context, @AttrRes int defStyleAttr, @StyleRes int defStyleRes) {
         final TypedArray typedArray = context.getTheme()
                 .obtainStyledAttributes(null, R.styleable.ToggleDrawable,
