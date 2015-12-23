@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DrawerArrowDrawable" parent="ToggleDrawable">
+        <item name="td_crossLength">18dp</item>
+        <item name="td_arrowShaftLength">16dp</item>
+        <item name="td_arrowHeadLength">11dp</item>
+        <item name="td_gapSize">5dp</item>
+    </style>
+
+    <style name="SearchCrossDrawable" parent="ToggleDrawable">
+        <item name="td_searchLength">8dp</item>
+        <item name="td_searchRadius">6dp</item>
+        <item name="td_crossLength">18dp</item>
+    </style>
+
+    <style name="SearchArrowDrawable" parent="ToggleDrawable">
+        <item name="td_searchLength">8dp</item>
+        <item name="td_searchRadius">6dp</item>
+        <item name="td_arrowShaftLength">16dp</item>
+        <item name="td_arrowHeadLength">11dp</item>
+    </style>
+
+    <style name="ToggleDrawable">
+        <item name="td_drawableSize">24dp</item>
+        <item name="td_color">?attr/colorAccent</item>
+        <item name="td_spin">true</item>
+        <item name="td_stroke">2dp</item>
+    </style>
+
+</resources>

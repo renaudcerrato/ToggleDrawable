@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr format="reference" name="searchArrowDrawableStyle"/>
+    <attr format="reference" name="searchCrossDrawableStyle"/>
+    <attr format="reference" name="drawerArrowDrawableStyle"/>
+
+    <attr name="td_arrowHeadLength" format="dimension"/>
+    <attr name="td_arrowShaftLength" format="dimension"/>
+    <attr name="td_searchLength" format="dimension"/>
+    <attr name="td_searchRadius" format="dimension"/>
+    <attr name="td_crossLength" format="dimension"/>
+    <attr name="td_gapSize" format="dimension"/>
+
+    <declare-styleable name="DrawerArrowToggle">
+        <attr name="td_arrowHeadLength"/>
+        <attr name="td_arrowShaftLength"/>
+        <attr name="td_crossLength"/>
+        <attr name="td_gapSize"/>
+    </declare-styleable>
+
+    <declare-styleable name="SearchCrossToggle">
+        <attr name="td_crossLength"/>
+        <attr name="td_searchLength"/>
+        <attr name="td_searchRadius"/>
+    </declare-styleable>
+
+    <declare-styleable name="SearchArrowToggle">
+        <attr name="td_arrowHeadLength"/>
+        <attr name="td_arrowShaftLength"/>
+        <attr name="td_searchLength"/>
+        <attr name="td_searchRadius"/>
+    </declare-styleable>
+
+    <declare-styleable name="ToggleDrawable">
+        <attr name="td_color" format="color"/>
+        <attr name="td_spin" format="boolean"/>
+        <attr name="td_drawableSize" format="dimension"/>
+        <attr name="td_stroke" format="dimension"/>
+    </declare-styleable>
+
+</resources>
