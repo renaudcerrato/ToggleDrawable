@@ -10,7 +10,7 @@ ToggleDrawable helps to create animated drawable transitions. The implementation
 
 # How? #
 
-The library provides a few implementations like [`SearchArrowDrawable`]( https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/SearchArrowDrawable.java) or [`DrawerArrowDrawable`](https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/DrawerArrowDrawable.java):
+The library provides a few implementations like [`SearchArrowDrawable`]( https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/SearchArrowDrawable.java), [`SearchCrossDrawable`](https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/SearchCrossDrawable.java) or [`DrawerArrowDrawable`](https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/DrawerArrowDrawable.java):
 
 ```
 ToggleDrawable drawable = new SearchArrowDrawable(context);
