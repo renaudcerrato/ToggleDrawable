@@ -18,7 +18,7 @@ mImageView.setImageDrawable(drawable);
 drawable.setProgress(...); // animate
 ```
 
-You can easily create your own transitions by specifying several [Bezier curves](https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/util/Bezier.java) to `ToggleDrawable`:
+You can easily create your own transitions by passing several [Bezier curves](https://github.com/renaudcerrato/ToggleDrawable/blob/master/library/src/main/java/com/mypopsy/drawable/util/Bezier.java) to `ToggleDrawable`:
 
 ```
 ToggleDrawable drawable = new ToggleDrawable(context);
