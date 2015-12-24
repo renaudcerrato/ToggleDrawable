@@ -26,7 +26,7 @@ drawable.add(<start>, <end>);
 drawable.add(<start>, <end>);
 ```
 
-Although, I recommend subclassing `ToggleDrawable` instead: 
+Or by simpy subclassing `ToggleDrawable` instead: 
 ```
 public class MyCustomToggleDrawable extends ToggleDrawable {
 
@@ -41,6 +41,29 @@ public class MyCustomToggleDrawable extends ToggleDrawable {
             add(Bezier.quadrant(radius, 270), Bezier.line(-radius, -radius, radius, -radius));
         }
     }
+```
+
+# Install #
+
+This repositery can be found on JitPack:
+
+https://jitpack.io/#renaudcerrato/ToggleDrawable
+
+Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+
+Add the dependency:
+```
+dependencies {
+	        compile 'com.github.renaudcerrato:ToggleDrawable:1.0.0'
+	}
 ```
 
 
