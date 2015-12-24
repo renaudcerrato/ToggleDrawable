@@ -43,6 +43,8 @@ public class MyCustomToggleDrawable extends ToggleDrawable {
     }
 ```
 
+Look at the [sample](https://github.com/renaudcerrato/ToggleDrawable/blob/master/sample/src/main/java/com/mypopsy/toggledrawable/MainActivity.java).
+
 # Install #
 
 This repositery can be found on JitPack:
