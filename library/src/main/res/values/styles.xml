@@ -23,7 +23,7 @@
 
     <style name="ToggleDrawable">
         <item name="td_drawableSize">24dp</item>
-        <item name="td_color">?attr/colorAccent</item>
+        <item name="td_color">?android:attr/textColorPrimary</item>
         <item name="td_spin">true</item>
         <item name="td_stroke">2dp</item>
     </style>
