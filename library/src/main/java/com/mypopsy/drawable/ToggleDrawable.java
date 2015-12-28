@@ -52,6 +52,7 @@ public class ToggleDrawable extends Drawable {
         mSize = typedArray.getDimensionPixelSize(R.styleable.ToggleDrawable_td_drawableSize, 0);
         mStrokeWidth = typedArray.getDimension(R.styleable.ToggleDrawable_td_stroke, 0);
         mSpin = typedArray.getBoolean(R.styleable.ToggleDrawable_td_spin, true);
+        typedArray.recycle();
 
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.MITER);
