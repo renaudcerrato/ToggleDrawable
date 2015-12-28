@@ -5,13 +5,16 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Transformation;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -82,15 +85,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void toggle() {
         isFaded = !isFaded;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            AnimatorSet set = new AnimatorSet();
 
-        AnimatorSet set = new AnimatorSet();
-
-        ObjectAnimator backgroundAnim = ObjectAnimator.ofInt(mContainer.getBackground(), "alpha", isFaded ? 128 : 0);
-        ObjectAnimator drawableAnim = ObjectAnimator.ofInt(mSeekBar, "progress", isFaded ? mSeekBar.getMax() : 0);
-        set.setDuration(700);
-        set.setInterpolator(new DecelerateInterpolator(3f));
-        set.playTogether(backgroundAnim, drawableAnim);
-        set.start();
+            ObjectAnimator backgroundAnim = ObjectAnimator.ofInt(mContainer.getBackground(), "alpha", isFaded ? 128 : 0);
+            ObjectAnimator drawableAnim = ObjectAnimator.ofInt(mSeekBar, "progress", isFaded ? mSeekBar.getMax() : 0);
+            set.setDuration(700);
+            set.setInterpolator(new DecelerateInterpolator(3f));
+            set.playTogether(backgroundAnim, drawableAnim);
+            set.start();
+        } else {
+            Animation set = new ToggleAnimationSet(isFaded);
+            set.setDuration(700);
+            set.setInterpolator(new DecelerateInterpolator(3f));
+            mContainer.startAnimation(set);
+        }
     }
 
     private void add(ToggleDrawable drawable) {
@@ -118,6 +127,27 @@ public class MainActivity extends AppCompatActivity {
             add(Bezier.quadrant(radius, 90), Bezier.line(-radius, radius, radius, radius));
             add(Bezier.quadrant(radius, 180), Bezier.line(-radius, radius, -radius, -radius));
             add(Bezier.quadrant(radius, 270), Bezier.line(-radius, -radius, radius, -radius));
+        }
+    }
+
+    private class ToggleAnimationSet extends Animation {
+
+        private final int mProgressRemaining;
+        private final int mProgressStart;
+        private final int mAlphaStart;
+        private final int mAlphaRemaining;
+
+        public ToggleAnimationSet(boolean isFaded) {
+            mAlphaStart = (int) (mSeekBar.getProgress() * 1f / mSeekBar.getMax() * 128);
+            mAlphaRemaining = isFaded ? 128 - mAlphaStart : -mAlphaStart;
+            mProgressStart = mSeekBar.getProgress();
+            mProgressRemaining = isFaded ? mSeekBar.getMax() - mProgressStart : -mProgressStart;
+        }
+
+        @Override
+        protected void applyTransformation(float interpolatedTime, Transformation t) {
+            mContainer.getBackground().setAlpha((int) (mAlphaStart + interpolatedTime * mAlphaRemaining));
+            mSeekBar.setProgress((int) (mProgressStart + interpolatedTime * mProgressRemaining));
         }
     }
 }
