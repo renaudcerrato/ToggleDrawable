@@ -1,6 +1,6 @@
 # ToggleDrawable #
 
-ToggleDrawable helps to create animated drawable transitionswith using a minimalistic and clean API. The implementation relies on bezier curves instead of SVG graphics, and is compatible below API 19.
+ToggleDrawable helps to create animated drawable transitions using a minimalistic and clean API. The implementation relies on bezier curves instead of SVG graphics, and is compatible below API 19.
 
 [DEMO APK](https://github.com/renaudcerrato/ToggleDrawable/raw/master/sample/sample-debug.apk)
 
