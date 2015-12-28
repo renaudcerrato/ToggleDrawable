@@ -1,15 +1,20 @@
 package com.mypopsy.drawable;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.AttrRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 
 import com.mypopsy.drawable.util.Bezier;
@@ -34,9 +39,13 @@ public class ToggleDrawable extends Drawable {
     // The reported intrinsic size of the drawable
     protected  final int mSize;
 
+    private ColorStateList mTint;
+    private PorterDuff.Mode mTintMode = PorterDuff.Mode.SRC_IN;
+
     private final ArrayList<Bezier> mStart = new ArrayList<>();
     private final ArrayList<Bezier> mEnd = new ArrayList<>();
     private final ArrayList<Bezier> mCurrent = new ArrayList<>();
+
 
     public ToggleDrawable(Context context) {
         this(context, 0, R.style.ToggleDrawable);
@@ -58,6 +67,8 @@ public class ToggleDrawable extends Drawable {
         mPaint.setStrokeJoin(Paint.Join.MITER);
         mPaint.setStrokeCap(Paint.Cap.BUTT);
         mPaint.setStrokeWidth(mStrokeWidth);
+
+        updateTintFilter();
     }
 
     public void reset() {
@@ -182,6 +193,41 @@ public class ToggleDrawable extends Drawable {
             mProgress = progress;
             invalidateSelf();
         }
+    }
+
+    @Override
+    public void setTintList(ColorStateList tint) {
+        mTint = tint;
+        updateTintFilter();
+    }
+
+    @Override
+    public void setTintMode(@NonNull PorterDuff.Mode tintMode) {
+        if(mTintMode != tintMode) {
+            mTintMode = tintMode;
+            updateTintFilter();
+        }
+    }
+
+    @Override
+    protected boolean onStateChange(int[] state) {
+        updateTintFilter();
+        return true;
+    }
+
+    @Override
+    public boolean isStateful() {
+        return mTint != null && mTint.isStateful();
+    }
+
+    private void updateTintFilter() {
+        if (mTint == null || mTintMode == null) {
+            setColorFilter(null);
+            return;
+        }
+
+        final int color = mTint.getColorForState(getState(), Color.TRANSPARENT);
+        setColorFilter(new PorterDuffColorFilter(color, mTintMode));
     }
 
     private static void lerp(Bezier a, Bezier b, Bezier out, float t) {
