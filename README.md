@@ -66,7 +66,7 @@ allprojects {
 Add the dependency:
 ```
 dependencies {
-	        compile 'com.github.renaudcerrato:ToggleDrawable:1.0.1'
+	        compile 'com.github.renaudcerrato:ToggleDrawable:1.0.2'
 	}
 ```
 
