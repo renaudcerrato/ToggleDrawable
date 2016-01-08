@@ -20,7 +20,7 @@ public class SearchModel {
         bottomRightQuadrant = Bezier.quadrant(radius, 0).offset(center, center);
         bottomLeftQuadrant = Bezier.quadrant(radius, 90).offset(center, center);
         topLeftQuadrant = Bezier.quadrant(radius, 180).offset(center, center);
-        topRightQuadrant = Bezier.quadrant(radius, -90).offset(center, center);
+        topRightQuadrant = Bezier.quadrant(radius, 270).offset(center, center);
 
         // handle
         handle = Bezier.line(0, 0, barLength, 0)
