@@ -1,4 +1,4 @@
-# ToggleDrawable #
+# ToggleDrawable [![](https://img.shields.io/badge/android%20weekly-%23185-yellow.svg)](http://androidweekly.net/issues/issue-185) [![](https://jitpack.io/v/renaudcerrato/ToggleDrawable.svg)](https://jitpack.io/#renaudcerrato/ToggleDrawable)
 
 ToggleDrawable helps to create animated drawable transitions using a minimalistic and clean API. The implementation relies on bezier curves instead of SVG graphics, and is compatible below API 19.
 
